@@ -8,6 +8,7 @@ Page({
   data: {
     showFullScreen: true,
     isFullScreen: false,
+    touchDown: false,
     duration: 0,
     current: 0,
     currentTime: 0,
@@ -89,8 +90,20 @@ Page({
   onShareAppMessage: function() {
 
   },
+  touchstart: function () {
+    this.setData({
+      touchDown: true
+    })
+  },
+  touchend: function () {
+    this.setData({
+      touchDown: false
+    })
+  },
   touchmove: function() {
-    console.log('touchmove')
+    const query = wx.createSelectorQuery()
+    const pos = query.select('#progress-body').boundingClientRect()
+    console.log('pos', pos)
   },
   changeFullScreen: function () {
     let {isFullScreen} = this.data
@@ -102,8 +115,9 @@ Page({
     }
   },
   onFullScreenChange: function (event) {
+    console.log('onFullScreenChange', this)
     this.setData({
-      isFullScreen: event.detail.fullscreen
+      isFullScreen: event.detail.fullScreen
     })
   }
 })
