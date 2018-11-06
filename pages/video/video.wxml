@@ -1,6 +1,21 @@
 <!--pages/video/video.wxml-->
 <view class='page-video'>
-  <view class='touch-mask'></view>
-  <video class="video-player" src="http://58.221.77.149/vipzj.video.tc.qq.com/AzRdgztSjYRH-MrvXxl8LNE4Thf9-KonY10iIzmdhlOs/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/t0027jni9cj.mp4?vkey=D2C5D8688AA519E5567496CCD55EEB1FD872AFFD40F09DE6EFBA326AC8DB1D7C69896100F6D3AF1E49DD59CE62B88D235918913F9E30E0BEBF845A5877EF56CB907B22DFB229B9D88250C384F1051FD266AB332A3AF36EF56941F93AED54874DE9A2686135DDE153"></video>
+  <video id="video-player" bindfullscreenchange='onFullScreenChange' bindtouchmove='touchmove' autoplay class="video-player" src="http://116.211.73.17/vipzj.video.tc.qq.com/AYZshohRsw7-AQBAX49_dRAz6KMF_eKv3ZZZNqqiVHVk/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/t0027jni9cj.mp4?vkey=EE48BC9C441742B65C6744E19BF223A140EEC7728AFA16A0C0191FB324672675E11566CA5F7523E619AA387EEAEDCDB901EAE3B6F4558878843E658E18B6EC41CDD588FEB086E1386DB8D5AF151A273BC393B49EA51BA36DBD108935BE300D933C6D9C02B521D7A8">
+    <cover-view class='touch-mask'>
+      <cover-view class='progress-wrapper'>
+        <cover-view class='current-time'>{{currentTimeText}}</cover-view>
+        <cover-view class='progress-slider'>
+          <cover-view class='progress-slider-inner'>
+            <cover-view wx:for="{{buffered}}" wx:key="{{item.start}}" class='progress-slider-buffered'></cover-view>
+            <cover-view class='progress-slider-inner-played' style="width:{{percent * 100}}%"></cover-view>
+          </cover-view>
+          <cover-view class='progress-slider-btn' style="left:{{percent * 100}}%"></cover-view>
+        </cover-view>
+        <cover-view class='end-time'>{{maxTimeText}}</cover-view>
+        <cover-image hidden="{{!showFullScreen}}" bindtap='changeFullScreen' class="change-screen" src="/image/fullscreen.png"></cover-image>
+        <cover-image hidden="{{showFullScreen}}" bindtap='changeFullScreen' class="change-screen" src="/image/exit_fullscreen.png"></cover-image>
+      </cover-view>
+      <button class='touch-button'></button>
+    </cover-view>
+  </video>
 </view>
-
