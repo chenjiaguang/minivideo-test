@@ -1,4 +1,13 @@
 <!--components/imageBox/imageBox.wxml-->
-<view class='box-warpper wrapper{{images.length}} {{direction}}' style='{{wrapperStyle}}'>
-  <image class='image' style="{{imageStyle[idx] || ''}}" wx:for='{{images}}' wx:key='idx' wx:for-index='idx' wx:for-item='image' src='{{image.compress}}'></image>
+<view class="container container{{images.length}} {{images[0] && images[0].longCover ? 'long' : 'short'}} {{(images[0] && images[0].width === images[0].height ? 'square' : (images[0].width >= images[0].height) ? 'horizontal' : 'vertical')}}">
+  <view class="box-warpper wrapper{{images.length}} {{(images[0] && images[0].width === images[0].height ? 'square' : (images[0].width >= images[0].height) ? 'horizontal' : 'vertical')}}">
+    <view bindtap="previewImage" data-url="{{image.url}}" class="image-box image-box{{idx + 1}} {{image.width === item.height ? 'square' : (image.width > image.height ? 'horizontal' : 'vertical')}}" wx:for='{{images}}' wx:key='idx' wx:for-index='idx' wx:for-item='image'>
+      <image src="{{image.gif ? (image.staticImage || image.url) : (image.compress || image.staticImage || image.url)}}" mode="aspectFill" lazy-load="{{true}}"></image>
+      <view wx:if="{{image.longCover}}" class="long-cover-tag"><text>长图</text></view>
+      <view wx:if="{{!image.longCover && image.gif}}" class="gif-cover-tag"><text>GIF</text></view>
+      <view wx:if="{{idx === 5 && images.length > 6 && images.length < 9}}" class='more-image'>
+        <text>+{{images.length - 6}}</text>
+      </view>
+    </view>
+  </view>
 </view>

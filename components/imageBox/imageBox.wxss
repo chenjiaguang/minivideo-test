@@ -1,5 +1,13 @@
 /* components/imageBox/imageBox.wxss */
+.container{
+  position: relative;
+}
 .box-warpper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7,17 +15,209 @@
   border-radius: 14rpx;
   overflow: hidden;
 }
-.wrapper1 .image{
-  border-radius: 14rpx;
+.image-box{
+  position: relative;
 }
-.image{
+.image-box image{
   display: block;
-  align-self: flex-end;
+  width: 100%;
+  height: 100%;
+  background: #F4F4F4;
+  position: relative;
+  z-index: 1;
 }
-.image:first-child{
+.more-image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  z-index: 3;
+}
+.long-cover-tag, .gif-cover-tag{
+  width: 70rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20rpx;
+  bottom: 28rpx;
+  z-index: 2;
+}
+
+/* 1图 */
+.container1 .image-box{
+  width: 100%;
+  height: 100%;
+}
+/* 方图 */
+.container1.square{
+  width: 100%;
+  padding-top: 100%;
+}
+/* 横图 */
+.container1.horizontal{
+  width: 100%;
+  padding-top: 62.6086%;
+}
+/* 竖图 */
+.container1.vertical{
+  width: 69.2753%;
+  padding-top: 100%;
+}
+/* 长图 */
+.container1.long{
+  width: 61.7391%;
+  padding-top: 100%;
+}
+
+
+/* 2图 */
+.container2{
+  width: 100%;
+  padding-top: 49.5652%;
+}
+.container2 .image-box{
+  width: 49.5652%;
+  height: 100%;
+}
+
+/* 3图 */
+.container3{
+  width: 100%;
+  padding-top: 66.3768%;
+}
+.wrapper3{
+  flex-direction: column;
+}
+.wrapper3 .image-box1{
+  width: 66.3768%;
+  height: 100%;
   align-self: flex-start;
 }
-.box-warpper.column{
+.wrapper3 .image-box2, .wrapper3 .image-box3{
+  width: 32.7536%;
+  height: 49.3449%;
+  align-self: flex-end;
+}
+
+/* 4图 */
+.container4{
+  width: 100%;
+  padding-top: 100%;
+}
+.wrapper4 .image-box2, .wrapper4 .image-box3, .wrapper4 .image-box4{
+  width: 32.7536%;
+  height: 32.7536%;
+  align-self: flex-end;
+}
+/* 第一张是横图或方图 */
+.wrapper4.horizontal .image-box1, .wrapper4.square .image-box1{
+  width: 100%;
+  height: 66.3768%;
+  align-self: flex-start;
+}
+/* 第一张是竖图 */
+.wrapper4.vertical{
   flex-direction: column;
-  align-items: flex-start;
+}
+.wrapper4.vertical .image-box1{
+  width: 66.3768%;
+  height: 100%;
+  align-self: flex-start;
+}
+
+/* 5图 */
+.container5{
+  width: 100%;
+  padding-top: 83.1884%;
+}
+.wrapper5 .image-box1, .wrapper5 .image-box2{
+  width: 49.5652%;
+  height: 59.5818%;
+  align-self: flex-start;
+}
+.wrapper5 .image-box3, .wrapper5 .image-box4, .wrapper5 .image-box5{
+  width: 32.7536%;
+  height: 39.3728%;
+  align-self: flex-end;
+}
+
+/* 6图 */
+.container6{
+  width: 100%;
+  padding-top: 66.3768%;
+}
+.wrapper6 .image-box{
+  width: 32.7536%;
+  height: 49.3449%;
+  align-self: flex-end;
+}
+.wrapper6 .image-box1, .wrapper6 .image-box2, .wrapper6 .image-box3{
+  align-self: flex-start;
+}
+
+/* 7图 */
+.container7{
+  width: 100%;
+  padding-top: 66.3768%;
+}
+.wrapper7 .image-box{
+  width: 32.7536%;
+  height: 49.3449%;
+  align-self: flex-end;
+}
+.wrapper7 .image-box1, .wrapper7 .image-box2, .wrapper7 .image-box3{
+  align-self: flex-start;
+}
+.wrapper7 .image-box7{
+  display: none;
+}
+
+/* 8图 */
+.container8{
+  width: 100%;
+  padding-top: 66.3768%;
+}
+.wrapper8 .image-box{
+  width: 32.7536%;
+  height: 49.3449%;
+  align-self: flex-end;
+}
+.wrapper8 .image-box1, .wrapper8 .image-box2, .wrapper8 .image-box3{
+  align-self: flex-start;
+}
+.wrapper8 .image-box7, .wrapper8 .image-box8{
+  display: none;
+}
+
+/* 9图 */
+.container9{
+  width: 100%;
+  padding-top: 100%;
+}
+.wrapper9 .image-box{
+  width: 32.7536%;
+  height: 32.7536%;
+  align-self: flex-end;
+}
+.wrapper9 .image-box1, .wrapper9 .image-box2, .wrapper9 .image-box3{
+  margin-top: 0;
+  align-self: flex-start;
+}
+.wrapper9 .image-box4, .wrapper9 .image-box5, .wrapper9 .image-box6{
+  margin-top: 0;
+  align-self: center;
 }
