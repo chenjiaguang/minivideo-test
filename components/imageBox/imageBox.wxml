@@ -1,0 +1,4 @@
+<!--components/imageBox/imageBox.wxml-->
+<view class='box-warpper wrapper{{images.length}} {{direction}}' style='{{wrapperStyle}}'>
+  <image class='image' style="{{imageStyle[idx] || ''}}" wx:for='{{images}}' wx:key='idx' wx:for-index='idx' wx:for-item='image' src='{{image.compress}}'></image>
+</view>

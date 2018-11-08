@@ -1,0 +1,2 @@
+<!--pages/webview/webview.wxml-->
+<web-view src="https://fanttest.fantuanlife.com/h5/user/center?user_id=19"></web-view>

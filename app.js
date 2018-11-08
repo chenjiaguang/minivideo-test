@@ -1,8 +1,9 @@
 //app.js
+const config = require('/configs/index.js') 
 App({
     onLaunch: function() {
         // 启动小程序后，根据环境设置request域名
-        this.globalData.baseUrl = this.globalData.env === 'dev' ? 'https://fanttest.fantuanlife.com' : 'https://fant.fantuanlife.com'
+        this.config = config
 
         // 登录
         wx.login({
@@ -31,10 +32,8 @@ App({
             }
         })
     },
+    config: null,
     globalData: {
-        userInfo: null,
-        env: 'dev',
-        apiVersion: '2.1',
-        baseUrl: ''
+        userInfo: null
     }
 })

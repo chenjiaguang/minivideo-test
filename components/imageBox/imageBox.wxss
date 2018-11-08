@@ -1,0 +1,23 @@
+/* components/imageBox/imageBox.wxss */
+.box-warpper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 14rpx;
+  overflow: hidden;
+}
+.wrapper1 .image{
+  border-radius: 14rpx;
+}
+.image{
+  display: block;
+  align-self: flex-end;
+}
+.image:first-child{
+  align-self: flex-start;
+}
+.box-warpper.column{
+  flex-direction: column;
+  align-items: flex-start;
+}

@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.2",
-	"appid": "wx8592e49e541a8910",
-	"projectname": "minivideo",
+	"appid": "wx393e9127b4f5df31",
+	"projectname": "ftxcx",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -36,9 +36,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "视频页面",
-					"pathName": "pages/video/video"
+					"id": 0,
+					"name": "话题页面",
+					"pathName": "pages/topicdetail/topicdetail",
+					"query": ""
 				}
 			]
 		}

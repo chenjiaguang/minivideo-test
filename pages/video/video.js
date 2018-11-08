@@ -6,17 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showFullScreen: true,
-    isFullScreen: false,
-    touchDown: false,
-    duration: 0,
-    current: 0,
-    currentTime: 0,
-    currentTimeText: '00:00',
-    maxTime: 0,
-    maxTimeText: '00:00',
-    percent: 0.0,
-    buffered: []
+    
   },
 
   /**
@@ -48,7 +38,7 @@ Page({
   onReady: function() {
     this.videoContext = wx.createVideoContext('video-player')
   },
-  
+
   /**
    * 生命周期函数--监听页面显示
    */
@@ -90,34 +80,7 @@ Page({
   onShareAppMessage: function() {
 
   },
-  touchstart: function () {
-    this.setData({
-      touchDown: true
-    })
-  },
-  touchend: function () {
-    this.setData({
-      touchDown: false
-    })
-  },
-  touchmove: function() {
-    const query = wx.createSelectorQuery()
-    const pos = query.select('#progress-body').boundingClientRect()
-    console.log('pos', pos)
-  },
-  changeFullScreen: function () {
-    let {isFullScreen} = this.data
-    console.log('changeFullScreen', isFullScreen)
-    if (isFullScreen) {
-      this.videoContext.exitFullScreen()
-    } else {
-      this.videoContext.requestFullScreen()
-    }
-  },
-  onFullScreenChange: function (event) {
-    console.log('onFullScreenChange', this)
-    this.setData({
-      isFullScreen: event.detail.fullScreen
-    })
+  onFullScreenChange: function(event) {
+    
   }
 })

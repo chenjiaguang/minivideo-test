@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/video/video"
+    "pages/video/video",
+    "pages/topiclist/topiclist",
+    "pages/topicdetail/topicdetail",
+    "pages/webview/webview"
   ],
   "window": {
     "backgroundTextStyle": "light",

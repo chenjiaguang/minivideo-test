@@ -1,21 +1,7 @@
 <!--pages/video/video.wxml-->
 <view class='page-video'>
-  <video id="video-player" bindfullscreenchange='onFullScreenChange' bindtouchmove='touchmove' autoplay class="video-player" src="http://112.67.251.151/vipzj.video.tc.qq.com/AKEbTUvVQq0e5xfKSk8LbFhRGEZe9C2cOQ-cFOkGiqUQ/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/t0027jni9cj.mp4?vkey=D155040F95B48EF90F84EEB323402D213CCA0C8876DC4345A741803A291D26D56151061F0F6A9E69055997DBB377A3BEB2B1FE9BCCC7E928F4293098F131D619A6D962507576A64C65921515EF10F92FB20ACF497D7BC88FA5C8DD7954DAFAC70C1063293A954B39">
-    <cover-view bindtouchmove="touchmove" class='touch-mask'>
-      <cover-view class='progress-wrapper'>
-        <cover-view class='current-time'>{{currentTimeText}}</cover-view>
-        <cover-view class='progress-slider'>
-          <cover-view id="progress-body" class='progress-slider-inner'>
-            <cover-view wx:for="{{buffered}}" wx:key="{{item.start}}" class='progress-slider-buffered'></cover-view>
-            <cover-view class='progress-slider-inner-played' style="width:{{percent * 100}}%"></cover-view>
-          </cover-view>
-          <cover-view bindtouchstart='touchstart' bindtouchend='touchend' bindtouchcancel='touchend' class='progress-slider-btn' style="left:{{percent * 100}}%;opacity:{{touchDown ? 0.5 : 1}}"></cover-view>
-        </cover-view>
-        <cover-view class='end-time'>{{maxTimeText}}</cover-view>
-        <cover-image wx:if="showFullScreen" hidden="{{isFullScreen}}" bindtap='changeFullScreen' class="change-screen" src="/image/fullscreen.png"></cover-image>
-        <cover-image wx:id="showFullScreen" hidden="{{!isFullScreen}}" bindtap='changeFullScreen' class="change-screen" src="/image/exit_fullscreen.png"></cover-image>
-      </cover-view>
-      <button class='touch-button'></button>
+  <video id="video-player" autoplay controls bindfullscreenchange='onFullScreenChange' class="video-player" src="http://122.228.251.147/vipzj.video.tc.qq.com/A1CI9iCrhPX4N_ybf-tpYmspCvULsR6eHuA_vXddW1uA/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/t0027jni9cj.mp4?vkey=BC13AB284084E38088B766669091E01C427A1692E4391CB39EDE8E7E2BF7B4CD7663B750FE17FBE2B4C94090266CB00BBA3688A9CE2DEDF73F7C6190F7B953D9E3A39BB651A97370A897F010208475B1490E5F95A67A7BD01975FC89BE0DEE9FEEB234B2AAE01900">
+    <cover-view hidden='showMask' class='touch-mask'>
     </cover-view>
   </video>
 </view>

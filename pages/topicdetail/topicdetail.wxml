@@ -1,0 +1,10 @@
+<!--pages/topicdetail/topicdetail.wxml-->
+<scroll-view class='p-topicdetail' bindscroll='pageScroll' scroll-y="{{true}}">
+  <view class='header'>话题头部</view>
+  <view id='tab-wrapper' class='tab-wrapper'>
+    <view class="tab {{stickyTab ? 'sticky' : ''}}">tab切换</view>
+  </view>
+  <view class='list'>
+    <image-box></image-box>
+  </view>
+</scroll-view>

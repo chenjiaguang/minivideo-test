@@ -1,7 +1,0 @@
-/* components/navigator/navigator.wxss */
-.status-bar{
-  background: red
-}
-.navigator-bar{
-  background: blue;
-}

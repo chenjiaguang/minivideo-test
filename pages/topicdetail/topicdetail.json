@@ -1,0 +1,6 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "image-box": "../../components/imageBox/imageBox"
+  }
+}

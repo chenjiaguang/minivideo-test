@@ -1,5 +1,0 @@
-<!--components/navigator/navigator.wxml-->
-<view class="ft-navigator">
-  <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-  <view class='navigator-bar' style="height:{{navigatorBarHeight}}px"></view>
-</view>

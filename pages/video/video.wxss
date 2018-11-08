@@ -28,6 +28,7 @@ page{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background: red;
 }
 .progress-wrapper{
   height: 40rpx;
@@ -42,14 +43,14 @@ page{
   position: relative;
 }
 .progress-slider-inner{
-  height: 6rpx;
+  height: 4rpx;
   background: #B7B7B7;
-  border-radius: 3rpx;
+  border-radius: 2rpx;
   position: absolute;
   left: 30rpx;
   top: 50%;
   right: 30rpx;
-  margin-top: -3rpx;
+  margin-top: -2rpx;
 }
 .progress-slider-buffered{
   height: 100%;
@@ -73,6 +74,8 @@ page{
   top: 50%;
   margin-top: -15rpx;
   margin-left: 15rpx;
+  transition: all 0ms;
+  transition-delay: 0ms;
 }
 .change-screen{
   width: 38rpx;
