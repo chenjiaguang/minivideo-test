@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    stickyTab: false
+    stickyTab: false,
+    images: []
   },
   customData: {
     tabRect: {}
@@ -16,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('onload')
+    console.log('onload', getCurrentPages())
     let rData = {
       limit: 20,
       pn: 1,
@@ -33,6 +34,27 @@ Page({
   },
   touchend: function () {
     this.getTabPos()
+  },
+  deleteImage: function () {
+    console.log('deleteImage')
+    let images = JSON.parse(JSON.stringify(this.data.images))
+    images.pop()
+    this.setData({ images })
+  },
+  addImage: function () {
+    console.log('addImage')
+    let images = JSON.parse(JSON.stringify(this.data.images))
+    images.push({
+      compress: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541693033167&di=0d32b0a7cac8188c353deb9fc6202c59&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fback_pic%2Fqk%2Fback_origin_pic%2F00%2F04%2F16%2Fd3f5c7f6fdf57b2cfacff323426893b6.jpg",
+      gif: false,
+      height: "600",
+      id: "576176",
+      longCover: false,
+      staticImage: "http://staticcdntest.fantuanlife.com/uimage/AC/66/67/67/AC66676725D12B394BBFC15352C12E5B.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,Q_70/interlace,1/format,jpg",
+      url: "http://staticcdntest.fantuanlife.com/uimage/AC/66/67/67/AC66676725D12B394BBFC15352C12E5B.jpg?x-oss-process=image/format,jpg",
+      width: "1920"
+    })
+    this.setData({images})
   },
 
   /**

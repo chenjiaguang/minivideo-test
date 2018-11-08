@@ -5,6 +5,8 @@
     <view class="tab {{stickyTab ? 'sticky' : ''}}">tab切换</view>
   </view>
   <view class='list'>
-    <image-box></image-box>
+    <image-box images="{{images}}"></image-box>
   </view>
+  <view bindtap="deleteImage">删除图片</view>
+  <view bindtap="addImage">添加图片</view>
 </scroll-view>

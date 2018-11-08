@@ -13,6 +13,6 @@
     <text class="iconfont icon-dysign4"></text>
     <navigator url="/pages/video/video?title=navigate" hover-class="navigator-hover">跳转到视频播放页11111</navigator>
   </view>
-  <navigator url='/pages/webview/webview'>跳跳跳</navigator>
+  <navigator url='/pages/topicdetail/topicdetail'>跳跳跳</navigator>
 </view>
 </view>

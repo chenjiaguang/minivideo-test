@@ -1,6 +1,8 @@
 /* components/imageBox/imageBox.wxss */
 .container{
   position: relative;
+  /* 不需要动画过渡，可以去除下面这条样式 */
+  transition: all 500ms;
 }
 .box-warpper{
   position: absolute;
