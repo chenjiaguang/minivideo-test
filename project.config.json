@@ -8,13 +8,19 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.2",
 	"appid": "wx393e9127b4f5df31",
 	"projectname": "ftxcx",
 	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -33,14 +39,30 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
 					"name": "话题页面",
 					"pathName": "pages/topicdetail/topicdetail",
 					"query": ""
-				}
+				},
+				{
+					"id": 1,
+					"name": "测试页面",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "动态详情",
+					"pathName": "pages/dynamicdetail/dynamicdetail"
+				},
+        {
+          "id": 2,
+          "name": "全部话题",
+          "pathName": "pages/topiclist/topiclist"
+        }
 			]
 		}
 	}

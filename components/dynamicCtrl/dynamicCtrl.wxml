@@ -1,0 +1,22 @@
+<!--components/dynamicCtrl/dynamicCtrl.wxml-->
+<view class='container flex-direction-row align-items-center justify-content-space-between'>
+  <view class='left flex-direction-row'>
+    <view class='container-like flex-direction-row align-items-center' bindtap="bindLike">
+      <text class="iconfont {{islike?'icon-like_v_2_5':'icon-dislike_v_2_5'}} iconfont-dislike"></text>
+      <text class='txt-likenum'>{{likenum}}</text>
+    </view>
+
+    <view class='container-comment flex-direction-row align-items-center'>
+      <text class="iconfont icon-comment_icon iconfont-comment"></text>
+      <text class='txt-commentnum'>{{commnetnum}}</text>
+    </view>
+  </view>
+  <view class='right'>
+    <view class='container-share flex-direction-row align-items-center'>
+      <text class="iconfont icon-comment_icon icon-share"></text>
+    </view>
+  </view>
+
+
+
+</view>

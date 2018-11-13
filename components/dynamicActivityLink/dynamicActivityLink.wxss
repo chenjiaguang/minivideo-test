@@ -1,0 +1,45 @@
+/* components/dynamicActivityLink/dynamicActivityLink.wxss */
+@import "../../assets/styles/common-flex.wxss";
+
+.container {
+  background-color: #f0f0f0;
+  border-radius: 8rpx;
+  padding: 14rpx;
+}
+
+.right {
+  width: 0;
+}
+
+.cover {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 17rpx;
+}
+
+.title {
+  color: #333;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.location {
+  color: #999;
+  font-size: 20rpx;
+  line-height: 34rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.time {
+  color: #999;
+  font-size: 20rpx;
+  line-height: 34rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

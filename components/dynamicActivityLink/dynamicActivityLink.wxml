@@ -1,0 +1,9 @@
+<!--components/dynamicActivityLink/dynamicActivityLink.wxml-->
+<view class='container flex-direction-row align-items-center'>
+  <image mode='aspectFill' class="cover" src="{{cover}}"></image>
+  <view class='right flex1 flex-direction-column'>
+    <text class='title'>{{title}}</text>
+    <text class='location'>{{location}}</text>
+    <text class='time'>{{time}}</text>
+  </view>
+</view>

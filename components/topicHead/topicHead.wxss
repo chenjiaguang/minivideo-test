@@ -1,0 +1,61 @@
+/* components/topicHeader/topicHeader.wxss */
+@import "../../assets/styles/common-flex.wxss";
+@import "../../assets/styles/iconfont.wxss";
+
+.top {
+  margin-bottom: 30rpx;
+}
+
+.cover {
+  height: 158rpx;
+  width: 158rpx;
+  border-radius: 10rpx;
+}
+
+.top-right {
+  margin-left: 30rpx;
+}
+
+.title-box {
+  color: #333;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  margin-bottom: 18rpx;
+  font-weight: bold;
+}
+
+.iconfont-topic {
+  color: #ff611a;
+  font-size: 34rpx;
+  line-height: 40rpx;
+  margin-right: 13rpx;
+}
+
+.dynamic-num {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #666;
+  margin-bottom: 35rpx;
+}
+
+.category {
+  color: #333;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  background-color: #ffeb88;
+  border-radius: 6px;
+  padding-left: 11rpx;
+  padding-right: 11rpx;
+  display: inline-block;
+}
+
+.des-text {
+  color: #666;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.des {
+  color: #666;
+  font-size: 24rpx;
+}

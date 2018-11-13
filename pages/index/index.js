@@ -1,12 +1,15 @@
 //index.js
 //获取应用实例
 const app = getApp()
+import util from '../../utils/util.js'
 Page({
   data: {
     motto: 'Hello World111',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    recommendTopics: [],
+    dynamics: []
   },
   //事件处理函数
   bindViewTap: function () {
@@ -15,7 +18,7 @@ Page({
     })
   },
   onLoad: function () {
-    console.log(app.config)
+    this.refreshData()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,6 +46,25 @@ Page({
       })
     }
   },
+  refreshData: function () {
+    let rData = {
+      pn: 1,
+      limit: 20,
+      snapshot: 0
+    }
+    util.request('/jv/qz/dynamics', rData, { token: "cb7bc5abd67346e5809338a5e9ba1b23" }).then(res => {
+      console.log('res', res)
+      if (res && res.data && !res.error) { // 成功获取数据
+        let { recommendTopics, list: dynamics } = res.data
+        this.setData({ recommendTopics, dynamics})
+      }
+    }).catch(err => {
+      console.log('err', err)
+    })
+  },
+  moreTopic: function () {
+    console.log('查看更多话题')
+  },
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -50,8 +72,5 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  },
-  customData: {
-    sss: 'ddd'
   }
 })

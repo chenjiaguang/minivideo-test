@@ -1,0 +1,5 @@
+<!--components/dynamicLocation/dynamicLocation.wxml-->
+<view class='container flex-direction-row align-items-center'>
+  <text class="iconfont icon-location iconfont-location"></text>
+  <text class='location'>{{location}}</text>
+</view>

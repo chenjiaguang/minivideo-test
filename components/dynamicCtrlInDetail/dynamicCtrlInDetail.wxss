@@ -1,0 +1,27 @@
+/* components/dynamicCtrlInDetail/dynamicCtrlInDetail.wxss */
+@import "../../assets/styles/iconfont.wxss";
+@import "../../assets/styles/common-flex.wxss";
+.container{
+  height: 81rpx;
+}
+
+.like-box{
+  width: 250rpx;
+  line-height:36rpx;
+}
+.comment-box{
+  width: 250rpx;
+  line-height:36rpx;
+}
+.share-box{
+  width: 250rpx;
+  line-height:36rpx;
+}
+.iconfont{
+  font-size: 36rpx;
+  margin-right: 16rpx;
+}
+.txt{
+  color: #666666;
+  font-size: 26rpx;
+}

@@ -1,13 +1,54 @@
 <!--components/imageBox/imageBox.wxml-->
-<view class="container container{{images.length}} {{images[0] && images[0].longCover ? 'long' : 'short'}} {{(images[0] && images[0].width === images[0].height ? 'square' : (images[0].width >= images[0].height) ? 'horizontal' : 'vertical')}}">
+<!-- swiper样式 -- 单图 -->
+<view wx:if="{{swiper && images.length === 1}}" bindtap="previewImage" data-url="{{images[0].url}}" class="swiper-single-box{{images[0].longCover ? ' single-long' : ''}}{{(images[0].height / images[0].width) >= 1.253 ? ' max' : ''}}{{(images[0].height / images[0].width) <= 0.533 ? ' min' : ''}}">
+  <image class="swiper-single-image" src="{{images[0].gif ? (images[0].staticImage || images[0].url) : (images[0].compress || images[0].staticImage || images[0].url)}}" mode="{{((images[0].height / images[0].width) < 1.253 && (images[0].height / images[0].width) > 0.533) ? 'widthFix' : ''}}{{images[0].longCover ? 'top' : 'aspectFill'}}"
+    lazy-load="{{true}}"></image>
+  <view wx:if="{{images[0].longCover}}" class="long-cover-tag">
+    <text>长图</text>
+  </view>
+  <view wx:if="{{!images[0].longCover && images[0].gif}}" class="gif-cover-tag">
+    <text>GIF</text>
+  </view>
+</view>
+<!-- swiper样式 -- 多图 -->
+<view wx:if="{{swiper && images.length > 1}}" class='swiper-container'>
+  <view class='swiper-wrapper'>
+    <swiper bindchange="swiperChange" class='swiper' duration="{{300}}" indicator-dots="{{!outDot}}" current="{{actived || 0}}" indicator-color="#D3D3D3" indicator-active-color="#1EB0FD">
+      <swiper-item bindtap="previewImage" data-url="{{image.url}}" wx:for='{{images}}' wx:key='idx' wx:for-index='idx' wx:for-item='image'>
+        <image src="{{image.gif ? (image.staticImage || image.url) : (image.compress || image.staticImage || image.url)}}" mode="aspectFill" lazy-load="{{true}}"></image>
+        <view wx:if="{{image.longCover}}" class="long-cover-tag">
+          <text>长图</text>
+        </view>
+        <view wx:if="{{!image.longCover && image.gif}}" class="gif-cover-tag">
+          <text>GIF</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view wx:if="{{outDot}}" class='swiper-bar'>
+    <view wx:for="{{images}}" wx:for-index="barIdx" wx:key="barIdx" class="swiper-bar-item {{barActivated === barIdx ? 'actived' : ''}}"></view>
+  </view>
+</view>
+<!-- 列表样式 -->
+<view wx:if="{{!swiper}}" class="container container{{images.length}} {{images[0] && images[0].longCover ? 'long' : 'short'}} {{(images[0] && images[0].width === images[0].height ? 'square' : (images[0].width >= images[0].height) ? 'horizontal' : 'vertical')}}">
   <view class="box-warpper wrapper{{images.length}} {{(images[0] && images[0].width === images[0].height ? 'square' : (images[0].width >= images[0].height) ? 'horizontal' : 'vertical')}}">
     <view bindtap="previewImage" data-url="{{image.url}}" class="image-box image-box{{idx + 1}} {{image.width === item.height ? 'square' : (image.width > image.height ? 'horizontal' : 'vertical')}}" wx:for='{{images}}' wx:key='idx' wx:for-index='idx' wx:for-item='image'>
       <image src="{{image.gif ? (image.staticImage || image.url) : (image.compress || image.staticImage || image.url)}}" mode="aspectFill" lazy-load="{{true}}"></image>
-      <view wx:if="{{image.longCover}}" class="long-cover-tag"><text>长图</text></view>
-      <view wx:if="{{!image.longCover && image.gif}}" class="gif-cover-tag"><text>GIF</text></view>
+      <view wx:if="{{image.longCover}}" class="long-cover-tag">
+        <text>长图</text>
+      </view>
+      <view wx:if="{{!image.longCover && image.gif}}" class="gif-cover-tag">
+        <text>GIF</text>
+      </view>
       <view wx:if="{{idx === 5 && images.length > 6 && images.length < 9}}" class='more-image'>
-        <text>+{{images.length - 6}}</text>
+        <text>+{{images.length - 5}}</text>
       </view>
     </view>
   </view>
 </view>
+
+<!-- 该组件接受传入的参数
+1.images: 必填   array      带有width，height，url，compress和staticImage可以不带
+2.swiper: 选填   boolean    是否是swiper展示图片
+3.actived: 选填  number     swiper展示时有效，表示初始展示的索引
+4.out-dot: 选填  boolean    swiper展示时有效，指定指示点是在swiper内展示还是swiper外展示 -->

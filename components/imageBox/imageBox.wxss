@@ -1,6 +1,7 @@
 /* components/imageBox/imageBox.wxss */
 .container{
   position: relative;
+  /* overflow: hidden; */
   /* 不需要动画过渡，可以去除下面这条样式 */
   transition: all 500ms;
 }
@@ -222,4 +223,66 @@
 .wrapper9 .image-box4, .wrapper9 .image-box5, .wrapper9 .image-box6{
   margin-top: 0;
   align-self: center;
+}
+
+/* swiper样式 */
+.swiper-single-box{
+  width: 100%;
+  position: relative;
+}
+.swiper-single-box.min{
+  padding-top: 53.3%;
+  position: relative;
+}
+.swiper-single-box.max{
+  padding-top: 125.3%;
+  position: relative;
+}
+.swiper-single-box.min .swiper-single-image, .swiper-single-box.max .swiper-single-image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.swiper-single-image{
+  display: block;
+  width: 100%;
+}
+.swiper-container{
+  width: 100%;
+}
+.swiper-wrapper{
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+.swiper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.swiper image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.swiper-bar{
+  width: 100%;
+  height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-bar-item{
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #D3D3D3;
+  margin: 0 8rpx;
+}
+.swiper-bar-item.actived{
+  background: #1EB0FD;
 }

@@ -1,0 +1,13 @@
+<!--components/recommendList/recommendList.wxml-->
+<view class='container'>
+  <view class='header'>
+    <view class='header-title'>{{title}}</view>
+    <view class='more' bindtap="tapMore">
+      <text class='more-text'>{{moretext}}</text>
+      <text class='iconfont icon-next'></text>
+    </view>
+  </view>
+  <scroll-view scroll-x="{{true}}" class='scroll-list'>
+    <slot name="content"></slot>
+  </scroll-view>
+</view>

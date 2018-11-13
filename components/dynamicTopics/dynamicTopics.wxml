@@ -1,0 +1,7 @@
+<!--components/dynamicTopics/dynamicTopics.wxml-->
+<view class='container flex-direction-row align-items-center flex-wrap-wrap'>
+  <view wx:for="{{topics}}" wx:key="{{item.name}}" class='topic-box flex-direction-row align-items-center'>
+    <text class="iconfont icon-topic_edit iconfont-topic"></text>
+    <text class='txt-topicName'>{{item.name}}</text>
+  </view>
+</view>

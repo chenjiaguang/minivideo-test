@@ -1,0 +1,38 @@
+/* components/recommendList/recommendList.wxss */
+@import "../../assets/styles/iconfont.wxss";
+
+.container{
+  padding: 20rpx 0;
+}
+.header{
+  display: flex;
+  height: 48rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 24rpx;
+}
+.header-title{
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 36rpx;
+  color: #333;
+}
+.more{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 32rpx;
+}
+.more-text{
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 12rpx;
+}
+.icon-next{
+  font-size: 20rpx;
+  color: #BBBBBB;
+}
+.scroll-list{
+  padding: 20rpx 0 8rpx 0;
+}

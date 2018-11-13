@@ -1,6 +1,7 @@
 {
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "image-box": "../../components/imageBox/imageBox"
+    "image-box": "../../components/imageBox/imageBox",
+    "scroll-list": "../../components/scrollList/scrollList"
   }
 }

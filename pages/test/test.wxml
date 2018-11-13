@@ -1,0 +1,23 @@
+<!--pages/test/test.wxml-->
+<text>dynamicVideoLink</text>
+<dynamicVideoLink></dynamicVideoLink>
+<text>dynamicVideoLink</text>
+<dynamicVideoLink title=""></dynamicVideoLink>
+<text>topicHead</text>
+<topicHead></topicHead>
+<text>dynamicContent</text>
+<dynamicContent></dynamicContent>
+<text>dynamicHead</text>
+<dynamicHead></dynamicHead>
+<text>dynamicCtrlInDetail</text>
+<dynamicCtrlInDetail></dynamicCtrlInDetail>
+<text>dynamicCtrl</text>
+<dynamicCtrl></dynamicCtrl>
+<text>dynamicTopics</text>
+<dynamicTopics></dynamicTopics>
+<text>dynamicNewsLink</text>
+<dynamicNewsLink></dynamicNewsLink>
+<text>dynamicActivityLink</text>
+<dynamicActivityLink></dynamicActivityLink>
+<text>dynamicLocation</text>
+<dynamicLocation></dynamicLocation>

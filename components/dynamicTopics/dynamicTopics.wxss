@@ -1,0 +1,25 @@
+/* components/dynamicTopics/dynamicTopics.wxss */
+@import "../../assets/styles/iconfont.wxss";
+@import "../../assets/styles/common-flex.wxss";
+.container{
+  margin-bottom: -16rpx;
+}
+.topic-box{
+  background-color: #F0F0F0;
+  border-radius:6rpx;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 48rpx;
+}
+.iconfont-topic{
+  font-size: 24rpx;
+  color: #ff611a;
+  margin-right: 10rpx;
+}
+.txt-topicName{
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333
+}

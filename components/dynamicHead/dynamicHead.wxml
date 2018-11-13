@@ -1,0 +1,20 @@
+<!--components/dynamicHead/dynamicHead.wxml-->
+<view class='container flex-direction-row align-items-center'>
+  <view class='head-left flex-direction-row'>
+    <image  mode="aspectFill" class="avatar" src="{{headerData.avatar}}"></image>
+  </view>
+  <view class='head-right flex-direction-column'>
+    <text class="name">{{headerData.username}}</text>
+    <view class="time-type-box head-right-bottom flex-direction-row align-items-center">
+      <text class="time">{{headerData.time}}</text>
+      <text class="iconfont icon-dian iconfont-dian"></text>
+      <text wx:if="{{rangeClass[(headerData.show_allways != 1 && headerData.range != 0 && headerData.range != 1 && headerData.range != 2) ? 'show_allways' : headerData.range]}}" class="iconfont iconfont-openType {{rangeClass[(headerData.show_allways != 1 && headerData.range != 0 && headerData.range != 1 && headerData.range != 2) ? 'show_allways' : headerData.range]}}"></text>
+    </view>
+  </view>
+</view>
+
+<!-- 使用时传入headerData属性，headerData里需有如下key
+avatar:头像url,
+username:用户名称,
+time:发布时间,
+range:可见范围 -->

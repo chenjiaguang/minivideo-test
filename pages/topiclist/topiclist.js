@@ -1,66 +1,34 @@
 // pages/topiclist/topiclist.js
+import util from '../../utils/util.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    selectIndex: 0,
+    dataList:[],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
+  onLoad: function(options) {
+    let rData = {}
+    util.request('/jv/qz/topic/getall', rData, {
+      token: "lcaKiq5GIC_FHqubOBcI6FUKaL8N171U"
+    }).then(res => {
+      this.setData({
+        dataList: res.data
+      })
+    }).catch(err => {
+      console.log('err', err)
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  selectTopicCategory: function(e) {
+    this.setData({
+      selectIndex: e.currentTarget.dataset.index
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  selectTopic: function(e) {
+    wx.showToast({
+      title: "点击了id" + e.currentTarget.dataset.item.id
+    })
   }
 })

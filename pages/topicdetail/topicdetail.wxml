@@ -1,12 +1,91 @@
 <!--pages/topicdetail/topicdetail.wxml-->
-<scroll-view class='p-topicdetail' bindscroll='pageScroll' scroll-y="{{true}}">
+<!-- <scroll-view class='p-topicdetail' bindscroll='pageScroll' scroll-y="{{true}}">
   <view class='header'>话题头部</view>
   <view id='tab-wrapper' class='tab-wrapper'>
     <view class="tab {{stickyTab ? 'sticky' : ''}}">tab切换</view>
   </view>
   <view class='list'>
-    <image-box images="{{images}}"></image-box>
+    <swiper class='tab-list'>
+      <swiper-item class="tab-list-item">
+        <view bindtap="deleteImage">删除图片</view>
+        <view bindtap="addImage">添加图片</view>
+      </swiper-item>
+    </swiper>
+    <image-box images="{{images}}" swiper="{{true}}" actived="{{0}}" out-dot="{{true}}"></image-box>
   </view>
-  <view bindtap="deleteImage">删除图片</view>
-  <view bindtap="addImage">添加图片</view>
-</scroll-view>
+</scroll-view> -->
+<scroll-list tabs="{{tabs}}">
+  <view class='header' slot="header">话题头部</view>
+  <view class='header' wx:for="{{tabs}}" wx:for-item="tab" wx:for-index="idx" wx:key="{{tab.title}}" slot="header{{idx}}">话题头部</view>
+  <!-- <view class='tab-wrapper' slot="tab-header">
+    <view class="tab {{stickyTab ? 'sticky' : ''}}">tab切换</view>
+  </view> -->
+  <view slot="tab-body0" class="tab-list-item">
+    <image-box images="{{images}}" swiper="{{true}}" actived="{{0}}" out-dot="{{true}}"></image-box>
+    <view bindtap="deleteImage">删除图片</view>
+    <view bindtap="addImage">添加图片</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+    <view>bbbbbbbbb</view>
+  </view>
+  <view slot="tab-body1" class="tab-list-item">
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>sdfsdaaaaaaa</view>
+    <view>kkkkkkkkk</view>
+  </view>
+</scroll-list>

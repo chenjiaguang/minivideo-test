@@ -1,0 +1,26 @@
+<!--components/scrollList/scrollList.wxml-->
+<view class='scroll-wrapper'>
+  <view bindtouchmove="headerTouchmove" id="ft-scroll-header" style="transform:translateY({{transY}})" class="ft-header {{(headerHeight) ? 'fixed' : 'static'}}">
+    <view id="banner-header" class='banner-header'>
+    <slot name="header" class='header'></slot>
+    </view>
+    <view id="tab-header" class="tab-header tab-header{{tabs.length}}">
+      <!-- <slot name="tab-header"></slot> -->
+      <view bindtap="changeTab" data-idx="{{idx}}" class="tab-header-item {{(currentTab || initialTab) === idx ? 'current' : ''}}" wx:for="{{tabs}}" wx:for-index="idx" wx:for-item="tab" wx:key="{{tab.title}}">
+      <text>{{tab.title}}</text>
+      <view class='tab-slider'></view>
+      </view>
+    </view>
+  </view>
+  <swiper id="scroll-body" class='scroll-body' current="{{currentTab || initialTab}}" duration="{{300}}" bindchange="swiperChange">
+    <swiper-item wx:for="{{tabs}}" wx:for-index="idx" wx:for-item="tab" wx:key="{{idx}}" class="tab-list-item">
+      <scroll-view bindscrolltoupper="onScrolltoupper" bindscroll="onScroll" data-idx="{{idx}}" scroll-into-view="{{scrollElements[idx]}}" scroll-y="{{true}}" style="width:100%;height:100%">
+        <view id="scroll-ele{{idx}}" style="width:100%;height:0"></view>
+        <view class='ft-header-wrapper' style="padding-top:{{headerHeight || 0}}">
+          <slot name="tab-body{{idx}}"></slot>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view hidden="{{!showRefresh}}" bindtap="refreshData" class='refresh-btn'>刷新</view>
+</view>

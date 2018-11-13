@@ -1,2 +1,13 @@
 <!--pages/topiclist/topiclist.wxml-->
-<text>pages/topiclist/topiclist.wxml</text>
+<view class='container flex-direction-row align-items-stretch'>
+  <scroll-view scroll-y class='scroll-left flex-direction-column align-items-stretch'>
+    <view wx:for="{{dataList}}" wx:key="{{item}}" class='topic-category {{index==selectIndex?"active":""}}' data-index="{{index}}" bindtap='selectTopicCategory'>
+      <view wx:if="{{index==selectIndex}}" class='flag'></view>{{item.topicClassification.name}}</view>
+  </scroll-view>
+  <scroll-view scroll-y class='scroll-right'>
+    <view class='topic-name' hover-class='active' wx:for="{{dataList[selectIndex].topicInfo}}" wx:key="{{item}}" data-item="{{item}}" bindtap='selectTopic'>
+      <text class="iconfont icon-topic_edit iconfont-topic"></text> {{item.title}}
+      <view style='height:1px;background:#E5E5E5;margin-left:30rpx;'></view>
+    </view>
+  </scroll-view>
+</view>

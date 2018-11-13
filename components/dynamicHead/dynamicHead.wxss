@@ -1,0 +1,41 @@
+/* components/dynamicHead/dynamicHead.wxss */
+@import "../../assets/styles/iconfont.wxss";
+@import "../../assets/styles/common-flex.wxss";
+.container{
+  height: 138rpx;
+}
+.head-right-bottom{
+  line-height: 42rpx;
+}
+.avatar{
+  height: 84rpx;
+  width: 84rpx;
+  margin-left: 30rpx;
+  margin-right: 16rpx;
+  border-radius: 42rpx;
+}
+.name{
+  font-size:30rpx;
+  line-height: 40rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.time-type-box{
+  height: 34rpx;
+  line-height: 28rpx;
+}
+.time{
+  font-size:24rpx;
+  color: #999999;
+}
+.iconfont-openType{
+  font-size:24rpx;
+  color: #999999;
+}
+.iconfont-dian{
+  font-size:24rpx;
+  color: #999999;
+  margin: 0 -2rpx;
+}
+
+

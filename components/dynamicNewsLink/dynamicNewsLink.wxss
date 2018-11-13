@@ -1,0 +1,24 @@
+/* components/dynamicNewsLink/dynamicNewsLink.wxss */
+@import "../../assets/styles/common-flex.wxss";
+.container {
+  background-color: #f0f0f0;
+  border-radius: 8rpx;
+  padding: 14rpx;
+}
+
+.cover {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 17rpx;
+}
+
+.title{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 42rpx;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

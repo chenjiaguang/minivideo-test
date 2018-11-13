@@ -9,3 +9,8 @@
   align-items: center;
   justify-content: space-between;
 }
+.block-separator{
+  width: 100%;
+  height: 16rpx;
+  background: #E1E1E6;
+}

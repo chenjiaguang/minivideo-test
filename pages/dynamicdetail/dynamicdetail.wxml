@@ -1,0 +1,5 @@
+<!--pages/dynamicdetail/dynamicdetail.wxml-->
+<text>pages/dynamicdetail/dynamicdetail.wxml</text>
+<comment-list commentData="{{commentData}}" bind:moreReply="viewMoreReply"></comment-list>
+<view class='add-like' bindtap="deleteLike">删除点赞</view>
+<view class='add-like' bindtap="addLike">添加点赞</view>

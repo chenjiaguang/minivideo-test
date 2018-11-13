@@ -1,0 +1,21 @@
+<!--components/dynamicCtrlInDetail/dynamicCtrlInDetail.wxml-->
+<view class='flex-direction-column'>
+  <view style='height:1px;background:#E5E5E5;margin-left:30rpx;margin-right:30rpx;'></view>
+  <view class='container flex-direction-row align-items-center justify-content-space-between'>
+    <view class='like-box flex-direction-row flex-center'>
+      <text class="iconfont icon-dislike_v_2_5 iconfont-dislike"></text>
+      <text class='txt'>赞</text>
+    </view>
+    <view style='width:1px;height:36rpx;background:#E5E5E5;'></view>
+    <view class='comment-box flex-direction-row flex-center'>
+      <text class="iconfont icon-comment_icon iconfont-comment"></text>
+      <text class='txt'>评论</text>
+    </view>
+    <view style='width:1px;height:36rpx;background:#E5E5E5;'></view>
+    <view class='share-box flex-direction-row flex-center'>
+      <text class="iconfont icon-comment_icon iconfont-share"></text>
+      <text class='txt'>分享</text>
+    </view>
+  </view>
+
+</view>

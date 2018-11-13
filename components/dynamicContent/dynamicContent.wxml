@@ -1,0 +1,9 @@
+<!--components/dynamicContent/dynamicContent.wxml-->
+<view class='container flex-direction-column' style="margin:{{margin}};max-height:{{!isOpen ? (boxHeight+'rpx') : (contentHeight ? contentHeight : 'auto')}}">
+  <text id='content' class='content'>{{content}}</text>
+  <view wx:if='{{!isOpen}}' class='open-box' bindtap='open'>
+    <text class='open'>展开</text>
+  </view>
+</view>
+
+<!-- 传入content[string]来显示文字，可传入margin[string]来设置外边距 -->

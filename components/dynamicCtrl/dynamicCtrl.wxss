@@ -1,0 +1,44 @@
+/* components/dynamicCtrl/dynamicCtrl.wxss */
+@import "../../assets/styles/iconfont.wxss";
+@import "../../assets/styles/common-flex.wxss";
+.container{
+  height: 88rpx;
+}
+.container-like{
+  width:174rpx;
+}
+.iconfont-dislike{
+  font-size: 44rpx;
+  margin-left: 30rpx;
+  margin-right: 12rpx;
+}
+.icon-like_v_2_5{
+  color: #fe4c43
+}
+.txt-likenum{
+  font-size: 26rpx;
+  color: #666666;
+}
+
+
+.container-comment{
+  width:174rpx;
+}
+.iconfont-comment{
+  font-size: 44rpx;
+  margin-left: 30rpx;
+  margin-right: 12rpx;
+}
+.txt-commentnum{
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.container-share{
+  width:104rpx;
+}
+.icon-share{
+  font-size: 44rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}

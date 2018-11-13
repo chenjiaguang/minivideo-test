@@ -1,0 +1,12 @@
+/* components/dynamicLocation/dynamicLocation.wxss */
+@import "../../assets/styles/iconfont.wxss";
+@import "../../assets/styles/common-flex.wxss";
+.iconfont-location {
+  font-size: 24rpx;
+  color: #999;
+  margin-right: 4rpx;
+}
+.location{
+  font-size: 24rpx;
+  color: #999;
+}

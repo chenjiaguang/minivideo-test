@@ -1,18 +1,22 @@
 <!--index.wxml-->
 <view class="page-index">
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <recommend-list title="推荐话题" moretext="更多" bind:tapmore="moreTopic">
+    <view class="recommend-topic" slot="content">
+      <view class='topic-item' wx:for="{{recommendTopics}}" wx:for-index="idx" wx:for-item="topic" wx:key="{{topic.id}}">
+        <image class='topic-image' src="{{topic.cover ? (topic.cover.staticImage || topic.cover.compress || topic.cover.url) : topic.defaultIcon}}" mode='aspectFill'></image>
+        <view class='topic-mask'></view>
+        <view class='topic-title'>
+          <text class='iconfont icon-topic_v_2_5'></text>
+          <text>{{topic.title}}</text>
+        </view>
+      </view>
+    </view>
+  </recommend-list>
+  <view class='dynamic-item' wx:for="{{dynamics}}" wx:for-index="idx" wx:for-item="dynamic" wx:key="{{dynamic.id}}">
+    <view class='block-separator'></view>
+    <dynamic-head headerData="{{dynamic}}"></dynamic-head>
+    <image-box images="{{dynamic.covers}}" swiper="{{true}}" actived="{{0}}" out-dot="{{true}}"></image-box>
+    <!-- 内容文字动态 -- 有单图或有视频时有margin值否则margin值为0（调整模块间距） -->
+    <dynamic-content wx:if="{{dynamic.content}}" content="{{dynamic.content}}" margin="{{((dynamic.covers && dynamic.covers.length === 1) || (dynamic.linkInfo && dynamic.linkInfo.id && dynamic.linkInfo.type == 1 )) ? '24rpx 0 0 0' : '0'}}"></dynamic-content>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <text class="iconfont icon-dysign4"></text>
-    <navigator url="/pages/video/video?title=navigate" hover-class="navigator-hover">跳转到视频播放页11111</navigator>
-  </view>
-  <navigator url='/pages/topicdetail/topicdetail'>跳跳跳</navigator>
-</view>
 </view>

@@ -1,1 +1,67 @@
 /* pages/topiclist/topiclist.wxss */
+@import "../../assets/styles/common-flex.wxss";
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.scroll-left {
+  width: 140rpx;
+  background-color: #e5e5e5;
+  color: #333;
+  font-size: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.flag {
+  width: 6rpx;
+  height: 30rpx;
+  background: #ff611a;
+  left: 0;
+  top: 30rpx;
+  position: absolute;
+  border-radius: 3rpx;
+}
+
+.scroll-right {
+  overflow: hidden;
+  flex: 1;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.topic-category {
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  position: relative;
+}
+
+.topic-category.active {
+  background-color: #fff;
+}
+
+.topic-name {
+  height: 86rpx;
+  line-height: 86rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.topic-name.active {
+  background-color: #e5e5e5;
+}
+
+.iconfont-topic {
+  font-size: 32rpx;
+  color: #ff611a;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}

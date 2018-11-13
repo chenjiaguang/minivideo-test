@@ -1,0 +1,5 @@
+<!--components/dynamicNewsLink/dynamicNewsLink.wxml-->
+<view class='container flex-direction-row align-items-center'>
+  <image mode='aspectFill' class="cover" src="{{cover}}"></image>
+  <text class='title flex1'>{{title}}</text>
+</view>

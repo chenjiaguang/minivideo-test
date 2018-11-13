@@ -1,0 +1,18 @@
+<!--components/topicHeader/topicHeader.wxml-->
+<view class='container flex-direction-column'>
+  <view class='top flex-direction-row'>
+    <image mode="aspectFill" class="cover" src="{{cover}}"></image>
+    <view class='top-right flex-direction-column'>
+      <view class='title-box'>
+        <text class="iconfont icon-topic_edit iconfont-topic"></text>{{title}}</view>
+      <text class='dynamic-num'>{{dynamicNum}}</text>
+      <view class='flex-direction-row'>
+        <text class='category'>{{category}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottom flex-direction-row'>
+    <text class='des-text'>简介:</text>
+    <text class='des'>{{des}}</text>
+  </view>
+</view>

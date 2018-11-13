@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "dynamicContent": "/components/dynamicContent/dynamicContent",
+    "dynamicHead":"/components/dynamicHead/dynamicHead",
+    "dynamicCtrlInDetail": "/components/dynamicCtrlInDetail/dynamicCtrlInDetail",
+    "dynamicCtrl": "/components/dynamicCtrl/dynamicCtrl",
+    "dynamicTopics": "/components/dynamicTopics/dynamicTopics",
+    "dynamicNewsLink": "/components/dynamicNewsLink/dynamicNewsLink",
+    "dynamicLocation": "/components/dynamicLocation/dynamicLocation",
+    "dynamicActivityLink": "/components/dynamicActivityLink/dynamicActivityLink",
+    "dynamicVideoLink": "/components/dynamicVideoLink/dynamicVideoLink",
+    "topicHead": "/components/topicHead/topicHead"
+  }
+}

@@ -1,0 +1,34 @@
+<!--components/commentList/commentlist.wxml-->
+<view class='comment-wrapper'>
+  <!-- 头部 -->
+  <view class='header'>
+    <view wx:if="{{commentData.comment_num && commentData.comment_num > 0}}" class='header-title'>{{commentData.comment_num}}条评论</view>
+    <view wx:else class='header-title'>评论</view>
+    <view wx:if="{{commentData.like_num && commentData.like_list && commentData.like_list.length}}" class='header-like'>
+      <text class='like-text'>{{commentData.like_num}}人点了赞</text>
+      <view class='like-avatars'>
+        <image wx:if="{{idx < 3}}" class="avatar-item avatar-item{{idx}}" style="z-index:{{commentData.like_list.length - idx}};width:{{idx === 2 ? 44 : 50}}rpx;height:{{idx === 2 ? 44 : 50}}rpx;" wx:for="{{commentData.like_list}}" wx:key="{{like.uid}}" wx:for-index="idx" wx:for-item="like" src="{{like.avatar}}" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 评论列表 -->
+  <view class='list' wx:if="{{commentData.comment_list && commentData.comment_list.length}}">
+    <view class='list-item' wx:for="{{commentData.comment_list}}" wx:for-index="idx" wx:for-item="comment" wx:key="comment.id">
+      <view class='list-header'>
+        <image class='list-avatar' src="{{comment.avatar}}" mode="aspectFill"></image>
+        <view class='list-overview'>
+          <view class='list-name'><text class='user-name'>{{comment.username}}</text></view>
+          <view class='list-time'>{{comment.time}}</view>
+        </view>
+      </view>
+      <view class='list-content'>{{comment.content}}</view>
+      <view wx:if="{{comment.replys && comment.replys.list && comment.replys.list.length}}" class='reply-list'>
+        <view wx:for="{{comment.replys.list}}" wx:for-item="reply" wx:for-index="idx" wx:key="{{reply.id}}" class='reply-item'><text class='user-name'>{{reply.username}}</text><text wx:if="{{reply.pusername}}">回复<text class='user-name'>{{reply.pusername}}</text></text>：{{reply.content}}</view>
+        <view wx:if="{{comment.replys.paging && !comment.replys.paging.is_end}}" data-commentid="{{comment.id}}" data-pn="{{comment.replys.paging.pn}}" bindtap="moreReply" class='more-reply'>查看更多>></view>
+      </view>
+    </view>
+  </view>
+  <view class='list' wx:else>
+    <view class='list-item-empty'>暂无评论</view>
+  </view>
+</view>

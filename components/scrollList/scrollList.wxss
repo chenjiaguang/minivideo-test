@@ -1,0 +1,73 @@
+/* components/scrollList/scrollList.wxss */
+.scroll-wrapper{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #F2F2F2;
+}
+.scroll-body{
+  width: 100%;
+  height: 100%;
+}
+.ft-header.fixed{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  transition: all 300ms;
+  background: #fff;
+}
+.ft-header.fixed{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  transition: all 300ms;
+  background: #fff;
+}
+.ft-header.absolute{
+  position: absolute;
+}
+.tab-header{
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.tab-header-item{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/* 有两个tab时的样式 */
+.tab-header2 .tab-header-item{
+  width: 194rpx;
+}
+/* 有三个tab时的样式 */
+.tab-header2 .tab-header-item{
+  width: 144rpx;
+}
+.tab-slider{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -25rpx;
+  width: 50rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: transparent;
+}
+.tab-header-item.current .tab-slider{
+  background: #1EB0FD;
+}
+.refresh-btn{
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+  z-index: 999;
+}

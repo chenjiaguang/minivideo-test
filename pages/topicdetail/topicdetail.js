@@ -7,10 +7,35 @@ Page({
    */
   data: {
     stickyTab: false,
-    images: []
+    images: [],
+    tabs: [{
+      title: 'zuixin',
+      data: [],
+      paging: {},
+      fetching: false,
+      refreshing: false
+    },
+    {
+      title: 'zuire',
+      data: [],
+      paging: {},
+      fetching: false,
+      refreshing: false
+    }]
   },
   customData: {
-    tabRect: {}
+    tabRect: {},
+    images: [
+      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=444363870,3669186860&fm=200&gp=0.jpg',
+      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=500808421,1575925585&fm=200&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1341566140,1165602950&fm=200&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1810050752,207505815&fm=200&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2178785329,3164828238&fm=200&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1439351280,466388967&fm=26&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=509872140,103806935&fm=26&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3084817314,1112840538&fm=26&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2422677321,1320464292&fm=26&gp=0.jpg'
+    ]
   },
 
   /**
@@ -33,7 +58,7 @@ Page({
     })
   },
   touchend: function () {
-    this.getTabPos()
+    // this.getTabPos()
   },
   deleteImage: function () {
     console.log('deleteImage')
@@ -45,13 +70,13 @@ Page({
     console.log('addImage')
     let images = JSON.parse(JSON.stringify(this.data.images))
     images.push({
-      compress: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541693033167&di=0d32b0a7cac8188c353deb9fc6202c59&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fback_pic%2Fqk%2Fback_origin_pic%2F00%2F04%2F16%2Fd3f5c7f6fdf57b2cfacff323426893b6.jpg",
+      compress: this.customData.images[this.data.images.length],
       gif: false,
       height: "600",
       id: "576176",
       longCover: false,
       staticImage: "http://staticcdntest.fantuanlife.com/uimage/AC/66/67/67/AC66676725D12B394BBFC15352C12E5B.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,Q_70/interlace,1/format,jpg",
-      url: "http://staticcdntest.fantuanlife.com/uimage/AC/66/67/67/AC66676725D12B394BBFC15352C12E5B.jpg?x-oss-process=image/format,jpg",
+      url: this.customData.images[this.data.images.length],
       width: "1920"
     })
     this.setData({images})
@@ -61,7 +86,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getTabPos()
+    // this.getTabPos()
   },
 
   /**
@@ -99,19 +124,19 @@ Page({
 
   },
 
-  getTabPos: function () { // 获取tab的位置
-    const query = wx.createSelectorQuery()
-    query.select('#tab-wrapper').boundingClientRect()
-    query.selectViewport().scrollOffset()
-    query.exec(res => {
-      // res[0].top       // #the-id节点的上边界坐标
-      // res[1].scrollTop // 显示区域的竖直滚动位置
-      let {top, right, bottom, left, width, height} = res[0]
-      top = top + res[1].scrollTop
-      bottom = bottom + res[1].scrollTop
-      this.customData.tabRect = { top, right, bottom, left, width, height}
-    })
-  },
+  // getTabPos: function () { // 获取tab的位置
+  //   const query = wx.createSelectorQuery()
+  //   query.select('#tab-wrapper').boundingClientRect()
+  //   query.selectViewport().scrollOffset()
+  //   query.exec(res => {
+  //     // res[0].top       // #the-id节点的上边界坐标
+  //     // res[1].scrollTop // 显示区域的竖直滚动位置
+  //     let {top, right, bottom, left, width, height} = res[0]
+  //     top = top + res[1].scrollTop
+  //     bottom = bottom + res[1].scrollTop
+  //     this.customData.tabRect = { top, right, bottom, left, width, height}
+  //   })
+  // },
 
   pageScroll: function (event) {
     console.log('stickyTab', this.data.stickyTab)

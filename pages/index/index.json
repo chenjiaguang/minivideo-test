@@ -1,7 +1,15 @@
 {
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "范团",
+  "navigationBarBackgroundColor": "#FAFAFA",
   "window": {
     "enablePullDownRefresh": true
+  },
+  "usingComponents": {
+    "recommend-list": "../../components/recommendList/recommendList",
+    "dynamic-head": "../../components/dynamicHead/dynamicHead",
+    "image-box": "../../components/imageBox/imageBox",
+    "dynamic-content": "../../components/dynamicContent/dynamicContent"
   }
 }

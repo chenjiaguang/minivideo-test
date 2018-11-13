@@ -1,0 +1,132 @@
+/* components/commentList/commentlist.wxss */
+.comment-wrapper{
+  width: 100%;
+}
+/* 头部 */
+.header{
+  height: 98rpx;
+  padding: 0 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 30rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.header-title{
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+}
+.header-like{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.like-text{
+  font-size: 30rpx;
+  color: #666;
+  margin-right: 20rpx;
+}
+.like-avatars{
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.avatar-item{
+  width: 50rpx;
+  height: 50rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+  margin-left: -14rpx;
+  position: relative;
+  transition: all 1000ms;
+}
+/* .avatar-item:first-child{
+  margin-left: 0;
+} */
+.avatar-item0{
+  margin-left: 0;
+  transition: all 1000ms;
+}
+.avatar-item2{
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: -10rpx;
+  transition: all 1000ms;
+}
+/* 列表 */
+.list-item-empty{
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+  line-height: 160rpx;
+  padding-bottom: 80rpx;
+}
+.list-item{
+  margin-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 30rpx;
+  border-top: 1rpx solid #E5E5E5;
+}
+.list-item:first-child{
+  border-top: none;
+}
+.list-header{
+  display: flex;
+  align-items: center;
+  padding-top: 30rpx;
+}
+.list-avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.list-overview{
+  flex: 1;
+  padding-left: 16rpx;
+  overflow: hidden;
+}
+.list-name{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+.user-name{
+  color: #507DAF;
+}
+.list-time{
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #999;
+}
+.list-content{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: #333;
+  white-space: pre-wrap;
+  word-break: break-all;
+  padding: 20rpx 0 0 96rpx;
+}
+.reply-list{
+  margin-left: 96rpx;
+  margin-top: 30rpx;
+  padding: 12rpx 24rpx;
+  background: #F0F0F0;
+  font-size: 30rpx;
+  line-height: 38rpx;
+  color: #333;
+  border-radius: 8rpx;
+}
+.reply-item{
+  padding: 8rpx 0;
+}
+.more-reply{
+  padding: 8rpx 0;
+  color: #507DAF;
+}

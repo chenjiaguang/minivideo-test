@@ -4,7 +4,9 @@
     "pages/video/video",
     "pages/topiclist/topiclist",
     "pages/topicdetail/topicdetail",
-    "pages/webview/webview"
+    "pages/webview/webview",
+    "pages/dynamicdetail/dynamicdetail",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

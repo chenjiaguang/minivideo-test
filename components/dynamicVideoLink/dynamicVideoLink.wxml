@@ -1,0 +1,14 @@
+<!--components/dynamicVideoLink/dynamicVideoLink.wxml-->
+<view class='container flex-direction-column align-items-stretch'>
+  <view class='top' style='{{(!title)?"height:690rpx":""}}'>
+    <image class="cover" src="{{cover}}" mode="aspectFill"></image>
+    <view class='mask flex-direction-column align-items-center justify-content-center'>
+      <text class='iconfont icon-play play-button'></text>
+      <text class='duration'>{{duration}}</text>
+    </view>
+  </view>
+  <view wx:if="{{title}}" class='bottom flex-direction-column'>
+    <text class='from'>{{from}}</text>
+    <text class='title'>{{title}}</text>
+  </view>
+</view>
