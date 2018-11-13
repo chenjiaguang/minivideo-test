@@ -14,3 +14,6 @@
   height: 16rpx;
   background: #E1E1E6;
 }
+.txt-area-bg{
+  background: #EBEBEB;
+}

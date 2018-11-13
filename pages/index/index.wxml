@@ -15,7 +15,8 @@
   <view class='dynamic-item' wx:for="{{dynamics}}" wx:for-index="idx" wx:for-item="dynamic" wx:key="{{dynamic.id}}">
     <view class='block-separator'></view>
     <dynamic-head headerData="{{dynamic}}"></dynamic-head>
-    <image-box images="{{dynamic.covers}}" swiper="{{true}}" actived="{{0}}" out-dot="{{true}}"></image-box>
+    <image-box wx:if="{{dynamic.covers && dynamic.covers[0]}}" images="{{dynamic.covers}}" swiper="{{true}}" actived="{{0}}" out-dot="{{true}}"></image-box>
+    <dynamic-video-link wx:if="{{dynamic.linkInfo && dynamic.linkInfo.id && dynamic.linkInfo.type == 1}}" video-type="{{'2'}}"></dynamic-video-link>
     <!-- 内容文字动态 -- 有单图或有视频时有margin值否则margin值为0（调整模块间距） -->
     <dynamic-content wx:if="{{dynamic.content}}" content="{{dynamic.content}}" margin="{{((dynamic.covers && dynamic.covers.length === 1) || (dynamic.linkInfo && dynamic.linkInfo.id && dynamic.linkInfo.type == 1 )) ? '24rpx 0 0 0' : '0'}}"></dynamic-content>
   </view>

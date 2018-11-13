@@ -38,7 +38,7 @@ Component({
   },
 
   ready: function () {
-    console.log('properties', this.properties)
+    
   },
 
   /**
@@ -46,7 +46,6 @@ Component({
    */
   methods: {
     previewImage: function (event) {
-      console.log('previewImage', event)
       let current = event.currentTarget.dataset.url
       let urls = this.properties.images.map(item => item.url)
       wx.previewImage({urls, current})

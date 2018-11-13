@@ -10,6 +10,7 @@
     "recommend-list": "../../components/recommendList/recommendList",
     "dynamic-head": "../../components/dynamicHead/dynamicHead",
     "image-box": "../../components/imageBox/imageBox",
-    "dynamic-content": "../../components/dynamicContent/dynamicContent"
+    "dynamic-content": "../../components/dynamicContent/dynamicContent",
+    "dynamic-video-link": "../../components/dynamicVideoLink/dynamicVideoLink"
   }
 }
